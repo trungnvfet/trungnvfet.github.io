@@ -1,39 +1,8 @@
-[![Build Status](https://travis-ci.org/vietstacker/vietstacker.github.io.svg?branch=master)](https://travis-ci.org/vietstacker/vietstacker.github.io)
-
-# VietStack Technical Blog - Based on Will Jekyll Template - [Demo](http://willianjusten.com.br/will-jekyll-template)
+# Aduu Technical Blog - Based on Will Jekyll Template - [Demo](http://willianjusten.com.br/will-jekyll-template)
 
 ## Basic Setup
 
-1. [Install Jekyll](http://jekyllrb.com)
-2. Fork the [Will Jekyll Template](https://github.com/willianjusten/will-jekyll-template/fork)
-3. Clone the repo you just forked.
-4. Edit `_config.yml` to personalize your site.
-5. Check out the sample posts in `_posts` to see examples for assigning categories and tags, and other YAML data.
-6. Read the documentation below for further customization pointers and documentation.
-7. **Remember to compile your assets files with Gulp.**
-
 ## Site and User Settings
-
-You have to fill some informations on `_config.yml` to customize your site.
-
-```
-# Site settings
-description: A blog about lorem ipsum dolor sit amet
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://localhost:3000" # the base hostname & protocol for your site 
-
-# User settings
-username: Lorem Ipsum
-user_description: Anon Developer at Lorem Ipsum Dolor
-user_title: Anon Developer
-email: anon@anon.com
-twitter_username: lorem_ipsum
-github_username:  lorem_ipsum
-gplus_username:  lorem_ipsum
-disqus_username: lorem_ipsum
-```
-
-**Don't forget to change your baseurl before build your site!**
 
 ## Color customization
 
