@@ -1,37 +1,82 @@
-## Welcome to GitHub Pages
+[![Build Status](https://travis-ci.org/vietstacker/vietstacker.github.io.svg?branch=master)](https://travis-ci.org/vietstacker/vietstacker.github.io)
 
-You can use the [editor on GitHub](https://github.com/trungnvfet/trungnvfet.github.io/edit/master/README.md) to maintain and preview the content for your website in Markdown files.
+# VietStack Technical Blog - Based on Will Jekyll Template - [Demo](http://willianjusten.com.br/will-jekyll-template)
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+## Basic Setup
 
-### Markdown
+1. [Install Jekyll](http://jekyllrb.com)
+2. Fork the [Will Jekyll Template](https://github.com/willianjusten/will-jekyll-template/fork)
+3. Clone the repo you just forked.
+4. Edit `_config.yml` to personalize your site.
+5. Check out the sample posts in `_posts` to see examples for assigning categories and tags, and other YAML data.
+6. Read the documentation below for further customization pointers and documentation.
+7. **Remember to compile your assets files with Gulp.**
 
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+## Site and User Settings
 
-```markdown
-Syntax highlighted code block
+You have to fill some informations on `_config.yml` to customize your site.
 
-# Header 1
-## Header 2
-### Header 3
+```
+# Site settings
+description: A blog about lorem ipsum dolor sit amet
+baseurl: "" # the subpath of your site, e.g. /blog/
+url: "http://localhost:3000" # the base hostname & protocol for your site 
 
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+# User settings
+username: Lorem Ipsum
+user_description: Anon Developer at Lorem Ipsum Dolor
+user_title: Anon Developer
+email: anon@anon.com
+twitter_username: lorem_ipsum
+github_username:  lorem_ipsum
+gplus_username:  lorem_ipsum
+disqus_username: lorem_ipsum
 ```
 
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+**Don't forget to change your baseurl before build your site!**
 
-### Jekyll Themes
+## Color customization
 
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/trungnvfet/trungnvfet.github.io/settings). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
+All color variables are in `src/styl/variable`. To change the main color, just set the new value at `main` assignment. Another colors are for texts and the code background color.
 
-### Support or Contact
+## Creating posts
 
-Having trouble with Pages? Check out our [documentation](https://help.github.com/categories/github-pages-basics/) or [contact support](https://github.com/contact) and we’ll help you sort it out.
+You can use the `initpost.sh` to create your new posts. Just follow the command:
+
+```
+./initpost.sh -c Post Title
+```
+
+The new file will be created at `_posts` with this format `date-title.md`.
+
+## Front-matter 
+
+When you create a new post, you need to fill the post information in the front-matter, follow this example:
+
+```
+---
+layout: post
+title: "How to use"
+date: 2015-08-03 03:32:44
+image: '/assets/img/post-image.png'
+description: 'First steps to use this template'
+tags:
+- jekyll 
+- template 
+categories:
+- I love Jekyll
+twitter_text: 'How to install and use this template'
+---
+```
+
+## Running the blog in local
+
+In order to compile the assets and run Jekyll on local you need to follow those steps:
+
+- Install [NodeJS](https://nodejs.org/)
+- Run `npm install` 
+- Run `gulp`
+
+## License
+
+This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.
