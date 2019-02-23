@@ -7,15 +7,15 @@ url:
 enforce_ssl:
 
 # User settings
-username: 
+username: trungnv
 user_description: 
 user_title: 
-email: 
-twitter_username:
-github_username:
-gplus_username:
+email: trungnv.hut@gmail.com
+twitter_username: https://twitter.com/trungnvfet
+github_username: https://github.com/trungnvfet?tab=repositories
+gplus_username: https://www.linkedin.com/in/trungnv-n3q-a23029111/
 disqus_username:
-facebook_username:
+facebook_username: https://www.facebook.com/trungnvfet
 
 # Build settings
 markdown: kramdown
