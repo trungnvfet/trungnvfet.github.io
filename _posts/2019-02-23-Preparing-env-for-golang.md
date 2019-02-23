@@ -14,7 +14,6 @@ GOPATH chứa các thư mục dưới đây:
 * $GOPATH/pkg - Chứa các gói.
 * $GOPATH/bin - Chứa các file nhị phân.
 ```
-![Go Items](/static/img/go-series/thu-muc.png)
 
 ### 1.2. GO MODULE là gì?
 
@@ -43,7 +42,8 @@ Kiểm tra lại version của Go:
 $ go version
 ```
 
-{% include note.html content="  
+```bash
+Note: 
 
 - Mỗi một project nên tạo 1 folder mới và trỏ GOPATH vào folder đó.  
 
@@ -52,8 +52,7 @@ $ go version
 - Nếu dùng CLI thì ``export GOPATH=<đường_dẫn_của_folder>``.  
 
 - Sử dụng ``go get <đường_dẫn_package>`` để cài package dependency. e.g: `go get -t golang.org/x/oauth2/...`  
-
-" %}
+```
 
 Với Go module thì chúng ta quên các thứ ở trên đi và chỉ cần ``go mod init <name>`` là xong package dependency và sẽ tạo ra một file là <name>.mod. Để build ứng dụng thì chạy ``go build <name>`` và ``./<name>`` để running.
 ```sh
@@ -92,9 +91,6 @@ Sửa nội dung file `kernel.json` trong `$HOME/.local/share/jupyter/kernels/go
 ```
 
 Và chạy ``jupyter notebook`` từ Host để bật server.
-
-Kết quả đạt được như sau:
-![jupyter go](/static/img/go-series/jupyter.png)
 
 Tạm kết phần môi trường ở đây và đợi phần 2!
 
