@@ -1,4 +1,4 @@
-[MACOS] Note something for next installation
+[MacOS] Note something for next installation
 
 # Install HomeBrew:
 ```bash
@@ -26,14 +26,29 @@ $ eval $(docker-machine env default)
 ```
 
 ### GIT
+```bash
+$ 
+```
 
 ### PIP
+```bash
+$ 
+```
 
 ### Python 2 & Python 3
+```bash
+$ 
+```
 
 ### Go
+```bash
+$ 
+```
 
 ### Vscode
+```bash
+$ 
+```
 
 ### Virtualenv
 ```bash
