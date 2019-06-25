@@ -1,3 +1,17 @@
+---
+layout: post
+title: "Chuẩn bị môi trường cho ngôn ngữ Go"
+date: 2019-02-23 03:32:44
+image: '/assets/img/'
+description: 'How to install and use Go environment'
+tags:
+- Golang
+- Go
+categories:
+- Go series
+twitter_text: 'How to install and use Go environment'
+---
+
 ## 1. Sơ lược về ngôn ngữ GO
 
 Go là một ngôn ngữ lập trình mã nguồn mở [Open Source](https://github.com/golang/go), là ngôn ngữ dạng biên dịch. Go có cộng đồng phát triển lớn và có 1 hệ thống để kiểm duyệt code như [Openstack](https://review.openstack.org) là [Go review](https://go-review.googlesource.com/q/status:open).

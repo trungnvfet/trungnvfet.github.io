@@ -1,4 +1,16 @@
-[MacOS] Note something for next installation
+---
+layout: post
+title: "[MacOS] Note something for next installation"
+date: 2019-02-23 03:32:44
+image: '/assets/img/'
+description: '[MacOS] Note something for next installation'
+tags:
+- Macos
+- Docker
+categories:
+- Macos series
+twitter_text: '[MacOS] Note something for next installation'
+---
 
 # Install HomeBrew:
 ```bash
