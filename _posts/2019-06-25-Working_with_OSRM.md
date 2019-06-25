@@ -40,7 +40,7 @@ $wget http://download.geofabrik.de/asia/vietnam-latest.osm.bz2  # For Vietnam
 ```bash
 $docker run -t -i -p 5000:5000 -v "${PWD}:/data" osrm/osrm-backend osrm-extract -p /opt/car.lua /data/vietnam-latest.osm
 ```
-<img itemprop="image" class="img-rounded" src="../assets/img/osrm_1.png">
+<img itemprop="image" src="../assets/img/osrm_1.png">
 
 <B><U>Step 4</U></B>: Run partition and customize along with other containers
 ```bash
@@ -54,11 +54,11 @@ $docker run -t -i -p 5000:5000 -d -v $(pwd):/data osrm/osrm-backend osrm-routed 
 
 $docker ps -a
 ```
-<img itemprop="image" class="img-rounded" src="../assets/img/osrm_2.png">
+<img itemprop="image" src="../assets/img/osrm_2.png">
 
 <B><U>Step 5</U></B>: Check running osrm map server
 
-<img itemprop="image" class="img-rounded" src="../assets/img/osrm_3.png">
+<img itemprop="image" src="../assets/img/osrm_3.png">
 
 ## 2. Build OSRM front-end.
 ```bash
@@ -67,7 +67,7 @@ $docker run -p 9966:9966 osrm/osrm-frontend
 
 Result:
 
-<img itemprop="image" class="img-rounded" src="../assets/img/osrm_4.png">
+<img itemprop="image" src="../assets/img/osrm_4.png">
 
 Let's enjoy with OSRM !!!
 
