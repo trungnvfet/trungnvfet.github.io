@@ -1,5 +1,19 @@
-How to connect and use pycharm IDE from windows OS on Ubuntu Server
-===================================================================
+---
+layout: post
+title: "Use Pycharm on Remote Ubuntu Server"
+date: 2019-02-23 03:32:44
+image: '/assets/img/'
+description: 'Use Pycharm on Remote Ubuntu Server'
+tags:
+- Debug
+- Python
+categories:
+- 
+twitter_text: 'How to install and use Pycharm on Remote Ubuntu Server'
+---
+
+How to use pycharm IDE on Remote Ubuntu Server from windows OS
+==============================================================
 
 Preparation:
 ===========
@@ -61,5 +75,3 @@ Conclution:
 
 Enjoy!
 Author: TrungNV
-
-
