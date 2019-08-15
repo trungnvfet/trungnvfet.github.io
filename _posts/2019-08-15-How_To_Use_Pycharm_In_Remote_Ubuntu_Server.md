@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Use Pycharm on Remote Ubuntu Server"
-date: 2019-02-23 03:32:44
+date: 2019-08-15 03:32:44
 image: '/assets/img/'
 description: 'Use Pycharm on Remote Ubuntu Server'
 tags:
