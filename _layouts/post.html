@@ -1,43 +1,28 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>{{ page.title }}</title>
-    {% include header.html %}
-  </head>
-  <body>
+---
+layout: default
+---
 
-    {% include nav.html %}
+<article>
 
-    <main>
-      <div class="container">
-        <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line">
-        <p class="center">[&nbsp;N<sup>o</sup>{% for post in site.posts %}
-              {% if post.title == page.title %}
-              {{ forloop.index | roman }}
-              {% endif %}
-              {% endfor %}&nbsp;]
-        <span>&nbsp;{{ page.keywords }}</span></p>
-        <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line flip">
+	<div class="center">
+		<h1 class="title">{{ page.title }}</h1>
+		<time class="code">{{ page.date | date: '%B %-d, %Y' }}</time>
+	</div>
 
-        <h2 class="brand center" id="title">{{ page.title | upcase }}</h2>
-        {% if page.abstract %}<h5 class="center">{{ page.abstract }}</h5>{% endif %}
-        {% if page.category %}
-        <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line tag flip">
-        <p class="right tagline">{{ page.category }}</p>
-        <img src="{{ site.baseurl }}/assets/img/grunge.png" alt="" class="line tag">
-        {% endif %}
-        <br>
-        <h4 class="center space">{{ site.location | upcase }}</h4>
-        <h5 class="center">{{ page.date | date_to_long_string | upcase }}</h5>
+	<div class="divider"></div>
 
-        <div class="threecol justify">
-          {{ content }}
-        </div>
+	{{ content }}
 
-        <p class="right italics">by {{ page.author }}</p>
-      </div>
-    </main>
+</article>
 
-  </body>
-</html>
+<div class="page-navigation code">
+	{% if page.next.url %}
+    <a class="next" href="{{ page.next.url | prepend: site.baseurl | prepend: site.url }}" title="NEXT: {{page.next.title}}">&lt;&lt;</a>
+		<span> &middot; </span>
+  {% endif %}
+		<a class="home" href="{{ "/" | prepend: site.baseurl | prepend: site.url }}" title="Back to Index">Index</a>
+  {% if page.previous.url %}
+		<span> &middot; </span>
+    <a class="prev" href="{{ page.previous.url | prepend: site.baseurl | prepend: site.url }}" title="PREV: {{page.previous.title}}">&gt;&gt;</a>
+  {% endif %}
+</div>
