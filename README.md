@@ -1,82 +1,27 @@
-## Basic Setup
+# Marat
 
-1. [Install Jekyll](http://jekyllrb.com)
-2. Fork the [Will Jekyll Template](https://github.com/willianjusten/will-jekyll-template/fork)
-3. Clone the repo you just forked.
-4. Edit `_config.yml` to personalize your site.
-5. Check out the sample posts in `_posts` to see examples for assigning categories and tags, and other YAML data.
-6. Read the documentation below for further customization pointers and documentation.
-7. **Remember to compile your assets files with Gulp.**
+![Marat](https://raw.githubusercontent.com/JohnCoene/marat/master/assets/img/screenshot.png)
 
-## Site and User Settings
+Revive the values of the Enlightenment with `marat`.
 
-You have to fill some informations on `_config.yml` to customize your site.
+See [Marat in action](http://marat.john-coene.com).
 
-```
-# Site settings
-description: A blog about lorem ipsum dolor sit amet
-baseurl: "" # the subpath of your site, e.g. /blog/
-url: "http://localhost:3000" # the base hostname & protocol for your site 
+Marat is heavily inspired by [L'Ami du peuple](https://en.wikipedia.org/wiki/L%27Ami_du_peuple), a newspaper written by [Jean-Paul Marat](https://en.wikipedia.org/wiki/Jean-Paul_Marat) during the French Revolution, in which he was a j vocal advocate for the rights of man and liberty.
 
-# User settings
-username: Lorem Ipsum
-user_description: Anon Developer at Lorem Ipsum Dolor
-user_title: Anon Developer
-email: anon@anon.com
-twitter_username: lorem_ipsum
-github_username:  lorem_ipsum
-gplus_username:  lorem_ipsum
-disqus_username: lorem_ipsum
-```
+1. Adapt the `_config.yml` file
+2. Replace/Delete the posts
+3. Change `about.md`
+4. Change or add your links in the `nav.yml` file located in the `_data` folder
+5. Replace the `favicon.ico`
+6. Customise the `404.md` page in the root directory
+6. Run `bundle exec jekyll serve --watch`
+7. Enlighten the masses!
 
-**Don't forget to change your baseurl before build your site!**
+> Unlike Marat's pamphlets the theme is fully responsive.
 
-## Color customization
+Plugins:
 
-All color variables are in `src/styl/variable`. To change the main color, just set the new value at `main` assignment. Another colors are for texts and the code background color.
+Marat includes the following plugins.
 
-## Creating posts
-
-You can use the `initpost.sh` to create your new posts. Just follow the command:
-
-```
-./initpost.sh -c Post Title
-```
-
-The new file will be created at `_posts` with this format `date-title.md`.
-
-## Front-matter 
-
-When you create a new post, you need to fill the post information in the front-matter, follow this example:
-
-```
----
-layout: post
-title: "How to use"
-date: 2015-08-03 03:32:44
-image: '/assets/img/post-image.png'
-description: 'First steps to use this template'
-tags:
-- jekyll 
-- template 
-categories:
-- I love Jekyll
-twitter_text: 'How to install and use this template'
----
-```
-
-## Running the blog in local
-
-In order to compile the assets and run Jekyll on local you need to follow those steps:
-
-- Install [NodeJS](https://nodejs.org/)
-- Run `npm install` 
-- Run `gulp`
-
-## License
-
-This theme is free and open source software, distributed under the The MIT License. So feel free to use this Jekyll theme on your site without linking back to me or using a disclaimer.
-
-
-
-
+* [jekyll-roman](https://github.com/paulrobertlloyd/jekyll-roman)
+* [jekyll-seo-tag](https://github.com/jekyll/jekyll-seo-tag)
