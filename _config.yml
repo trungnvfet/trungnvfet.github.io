@@ -1,61 +1,45 @@
-# Welcome to Jekyll!
-#
-# This config file is meant for settings that affect your whole blog, values
-# which you are expected to set up once and rarely edit after that. If you find
-# yourself editing this file very often, consider using Jekyll's data files
-# feature for the data you need to update frequently.
-#
-# For technical reasons, this file is *NOT* reloaded automatically when you use
-# 'bundle exec jekyll serve'. If you change this file, please restart the server process.
+# Site Info
+title:              "The Plain"
+description:        "A minimalist Jekyll theme"
+author_name:        "Nguyen Van Trung" # change this to your name
+logo_url:           https://avatars2.githubusercontent.com/u/17582610?v=4 # Get it from GitHub API: https://api.github.com/users/<username>
 
-# Site settings
-# These are used to personalize your new site. If you look in the HTML files,
-# you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
-# You can create any custom variable you would like, and they will be accessible
-# in the templates via {{ site.myvariable }}.
-title: L'Ami du peuple
-email: jcoenep@hotmail.com
-description: >
-  Journal politique impartial, <br>
-  Par Mr. P. Marat auteur de l'Offrande a la patrie, <br>
-  du Moniteur et du Plan de Constitution, etc.
-tagline: vitam impendere vero
-location: Versailles
-date: true
-baseurl: "/marat" # the subpath of your site, e.g. /blog
-url: "http://johncoene.github.io" # the base hostname & protocol for your site, e.g. http://example.com
-author: Jean-Paul Marat
-google_analytics: UA-101394056-1
+# Site Settings
+url:                https://trungnvfet.github.io # main url
+baseurl:            /trungnvfet.github.io
+permalink:          /:title # Post permalink
+timezone:           Asia/Bangkok # https://en.wikipedia.org/wiki/List_of_tz_database_time_zones
+mathjax:            true  # enables support for mathjax - set to 'false' to disable
 
-# SEO
-twitter:
-  username: jdatap
+# Site Build
+highlighter:        rouge
+markdown:           kramdown
+kramdown:
+    input:          GFM
+sass:
+    style:          :compressed
 
-logo: /assets/logo.png
+# Other Params
+include:            [ "robots.txt" ]
+exclude:            [ "LICENSE", "README.md", "CNAME", "vendor", "Gemfile", "script" ]
+plugins:
+  - jekyll-sitemap
 
-lang: fr
 
-facebook:
- app_id: 101766790448070
 
-social:
-  name: John Coene
-  links:
-    - https://twitter.com/jdatap
-    - https://www.linkedin.com/in/johncoene
-    - https://plus.google.com/109009224717674019651
-    - https://github.com/JohnCoene
-
-# Build settings
-exclude: README.md
-markdown: kramdown
-theme: minima
-gems:
-  - jekyll-feed
-  - jekyll-seo-tag
-exclude:
-  - Gemfile
-  - Gemfile.lock
-plugins_dir:
-  - jekyll-roman
-  - jekyll-seo-tag
+defaults:
+  -
+    scope:
+      path:         ""
+    values:
+      layout:       "null"
+  -
+    scope:
+      type:         "pages"
+    values:
+      layout:       "page"
+  -
+    scope:
+      type:         "posts"
+    values:
+      layout:       "post"

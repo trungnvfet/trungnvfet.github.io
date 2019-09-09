@@ -1,9 +1,16 @@
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta http-equiv="content-language" content="{{ site.lang }}">
-<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<aside class="logo">
 
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/style.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/skeleton.css">
-<link rel="stylesheet" href="{{ site.baseurl }}/assets/css/normalize.css">
-{% include ga.html %}
+	{% if page.url == '/index.html' or page.url == '/' %}
+		{% assign link = '/about' %}
+		{% assign prompt = 'About the Author' %}
+	{% else %}
+		{% assign link = '/' %}
+		{% assign prompt = 'Back to Index' %}
+	{% endif %}
+
+	<a href="{{ link | prepend: site.baseurl | prepend: site.url }}">
+		<img src="{{ site.logo_url }}" alt="" class="logo-avatar">
+	</a>
+	<span class="logo-prompt code">{{ prompt }}</span>
+
+</aside>
