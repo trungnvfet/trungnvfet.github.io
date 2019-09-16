@@ -13,5 +13,6 @@ twitter_text: 'Talking about how to build Trove Openstack images'
 ---
 
 
-Please reference to following: https://medium.com/@trungnv.hut/how-to-build-a-specific-image-for-trove-openstack-database-as-a-service-ae0ecf738eaf
+Please reference to following:
+https://medium.com/@trungnv.hut/how-to-build-a-specific-image-for-trove-openstack-database-as-a-service-ae0ecf738eaf
 
