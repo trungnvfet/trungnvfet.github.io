@@ -86,14 +86,15 @@ Logs:
   ```
 ==> 
 Solution:
----------
+
   ```bash
   $ sudo vim /etc/ssh/sshd_config
-    `Set X11UseLocalhost no`
+    Set `X11UseLocalhost no`
   $ sudo service sshd restart
   $ exit
-  ssh -X user@remotehost
+  $ ssh -X user@remotehost
   $ xclock
+  $ ./pycharm.sh
   ```
 
 Conclution:
