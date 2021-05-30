@@ -6,7 +6,7 @@
 # --- Required options --- #
 
 # Name of website
-title: Bi1Ty
+title: xDragon9
 
 # Your name to show in the footer
 author: TrungNV
@@ -16,15 +16,16 @@ author: TrungNV
 navbar-links:
   About Me: "aboutme"
   Resources:
-    - Beautiful Jekyll: "https://beautifuljekyll.com"
-    - Learn markdown: "https://www.markdowntutorial.com/"
-  Author's home: "https://deanattali.com"
+    - Openstack: "https://www.openstack.org/"
+    - CF: "https://www.cloudfoundry.org/"
+    - Kubernetes: "https://kubernetes.io/"
+  Author's home: "https://bi1ty.github.io"
 
 # --- Logo --- #
 
 # Image to show in the navigation bar - works best with a square image
 # Remove this parameter if you don't want an image in the navbar
-avatar: "/assets/img/avatar-icon.png"
+avatar: "/assets/favicon.png"
 
 # By default, the image is cut into a circle. You can disable this behaviour by setting 'round-avatar: false'
 round-avatar: true
@@ -41,11 +42,11 @@ round-avatar: true
 social-network-links:
   email: "trungnv.hut@gmail.com"
   facebook: hangxom_113@yahoo.com
-  github: bi1ty.github.com
+  github: bi1ty
   twitter: trungnvfet
-  patreon: 
-  youtube: trungnv
-#  medium: yourname
+#  patreon: 
+  youtube: channel/UCvvlFcDuE94SnNc8VrR8y0g
+#  medium: @trungnv.hut
 #  reddit: yourname
 #  linkedin: daattali
 #  xing: yourname
@@ -78,7 +79,7 @@ share-links-active:
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "MyWebsite.com"
+url-pretty: "bi1ty.trungnvfet.4future"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
