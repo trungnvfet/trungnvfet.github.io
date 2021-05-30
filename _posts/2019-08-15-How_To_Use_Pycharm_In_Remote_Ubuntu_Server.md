@@ -68,6 +68,35 @@ Lastest, a pycharm (community/ professional) should have in the Ubuntu server.
 # ./pycharm.sh
 ```
 
+Issue: `Unable to detect graphics environment`
+----------------------------------------------
+Logs:
+-----
+  ```bash
+  OpenJDK 64-Bit Server VM warning: Option UseConcMarkSweepGC was deprecated in version 9.0 and will likely be removed in a future  release.
+
+  Startup Error: Unable to detect graphics environment
+  ```
+  AND
+  ```bash
+  trungnv@pv-controller-3:~$ ssh root@45.64.126.90 -X
+  root@45.64.126.90's password:
+  X11 forwarding request failed on channel 0
+  Welcome to Ubuntu 16.04.6 LTS (GNU/Linux 4.4.0-166-generic x86_64)
+  ```
+==> 
+Solution:
+
+  ```bash
+  $ sudo vim /etc/ssh/sshd_config
+    Set `X11UseLocalhost no`
+  $ sudo service sshd restart
+  $ exit
+  $ ssh -X user@remotehost
+  $ xclock
+  $ ./pycharm.sh
+  ```
+
 Conclution:
 ===========
 - This solution will help developers don't have much $ to build strong PC/ laptop. LOL
