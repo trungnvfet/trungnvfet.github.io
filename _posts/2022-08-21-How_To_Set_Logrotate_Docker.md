@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CÁCH TẠO LOGROTATE CHO CONTAINER THU CÔNG"
+title: "How to create container logrotate manualy"
 date: 2022-08-21 03:32:44
 image: '/assets/img/'
 description: 'Thay đổi đường dẫn logrotate cho docker'
@@ -11,9 +11,6 @@ categories:
 - DevOps
 twitter_text: 'Thay đổi đường dẫn logrotate cho docker'
 ---
-
-CÁCH TẠO LOGROTATE CHO CONTAINER THU CÔNG
------------------------------------------
 
 1. Tạo ổ lưu trữ file dài hạn
 ```bash
@@ -30,6 +27,7 @@ drwx--x--- 4 root root 237 Aug 21 10:51 d27fb874c3ef0352535ba0b3b95b79b03826f988
 ```
 
 3. Tạo file logrotate theo từng container
+
 ```bash
 [root@centos7 ]# vim /etc/logrotate.d/docker
 # deactivate mail
