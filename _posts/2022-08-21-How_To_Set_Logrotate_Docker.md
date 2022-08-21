@@ -27,7 +27,6 @@ drwx--x--- 4 root root 237 Aug 21 10:51 d27fb874c3ef0352535ba0b3b95b79b03826f988
 ```
 
 3. Tạo file logrotate theo từng container
-
 ```bash
 [root@centos7 ]# vim /etc/logrotate.d/docker
 # deactivate mail
