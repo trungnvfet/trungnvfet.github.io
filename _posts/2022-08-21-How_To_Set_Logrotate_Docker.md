@@ -12,12 +12,12 @@ categories:
 twitter_text: 'Thay đổi đường dẫn logrotate cho docker'
 ---
 
-1. Tạo ổ lưu trữ file dài hạn
+1. Tạo ổ lưu trữ file dài hạn:
 ```bash
 mkdir -p /data/rotate_logs
 ```
 
-2. Kiểm tra các containers đang có
+2. Kiểm tra các containers đang có:
 ```bash
 [root@centos7 ]# ll /var/lib/docker/containers/
 total 0
@@ -26,7 +26,8 @@ drwx--x--- 4 root root 237 Aug 21 10:40 bde505bd2246251a40890c984fcfac75b25d23f6
 drwx--x--- 4 root root 237 Aug 21 10:51 d27fb874c3ef0352535ba0b3b95b79b03826f988bbddab386c4610bce2e4b6ba
 ```
 
-3. Tạo file logrotate theo từng container
+3. Tạo file logrotate theo từng container:
+
 ```bash
 [root@centos7 ]# vim /etc/logrotate.d/docker
 
