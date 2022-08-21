@@ -27,12 +27,11 @@ drwx--x--- 4 root root 237 Aug 21 10:51 d27fb874c3ef0352535ba0b3b95b79b03826f988
 ```
 
 3. Tạo file logrotate theo từng container
-```ini
+
+```bash
 [root@centos7 ]# vim /etc/logrotate.d/docker
-# deactivate mail
 nomail
 
-# move the log files to another directory?
 olddir /data/rotate_logs
 /var/lib/docker/containers/a38e7ebfd43a4fad3f045eb188589ae7a1e8bc3d1f1b6a135c4d0c00493fc7f4/a38e7ebfd43a4fad3f045eb188589ae7a1e8bc3d1f1b6a135c4d0c00493fc7f4-json.log {
  su root root
