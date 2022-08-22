@@ -28,7 +28,10 @@ twitter_text: 'Thay đổi đường dẫn logrotate cho docker'
 
 3. Tạo file logrotate theo từng container:
 ```bash
-[root@centos7 ]# vim /etc/logrotate.d/docker
+    # deactivate mail
+    nomail
+    
+    # move the log files to another directory?
     olddir /data/rotate_logs
     /var/lib/docker/containers/*/*-json.log {
      su root root
@@ -39,10 +42,7 @@ twitter_text: 'Thay đổi đường dẫn logrotate cho docker'
      daily
      dateext
      dateformat -%Y%m%d
-     postrotate
-         mv /var/lib/docker/containers/*/*.gz /data/rotate_logs;
-     endscript
-    }
+    } 
 ```
 
 4. Set hiệu lực cho logrotate cho file vừa tạo
