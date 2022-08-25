@@ -26,7 +26,7 @@ twitter_text: 'Thay đổi đường dẫn logrotate cho docker'
     drwx--x--- 4 root root 237 Aug 21 10:51 d27fb874c3ef0352535ba0b3b95b79b03826f988bbddab386c4610bce2e4b6ba
 ```
 
-3. Tạo file logrotate theo từng container:
+3. Tạo file logrotate theo từng container `/etc/logrotate.d/docker`:
 ```bash
     olddir /data/rotate_logs
     /var/lib/docker/containers/*/*-json.log {
@@ -45,3 +45,7 @@ twitter_text: 'Thay đổi đường dẫn logrotate cho docker'
 [root@centos7 ]# logrotate /etc/logrotate.d/docker
 ```
 
+5. Test debug file logrote
+```bash
+[root@centos7 ]# logrotate -d /etc/logrotate.d/docker
+```
