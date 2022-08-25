@@ -28,21 +28,16 @@ twitter_text: 'Thay đổi đường dẫn logrotate cho docker'
 
 3. Tạo file logrotate theo từng container:
 ```bash
-    # deactivate mail
-    nomail
-    
-    # move the log files to another directory?
     olddir /data/rotate_logs
     /var/lib/docker/containers/*/*-json.log {
-     su root root
      rotate 180
      missingok
      compress
-     create 0755
      daily
      dateext
      dateformat -%Y%m%d
-    } 
+     copytruncate
+    }
 ```
 
 4. Set hiệu lực cho logrotate cho file vừa tạo
