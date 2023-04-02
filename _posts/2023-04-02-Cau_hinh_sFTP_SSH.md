@@ -19,11 +19,11 @@ twitter_text: 'How to configure sftp users in centos7'
 
 2. Tạo/ gán account kèm home_directory và gán vào group `sftpusers`:
 ```bash
-# Tạo user mới
+Tạo user mới:
 [root@centos7 ]# useradd -g sftpusers -s /sbin/nologin -m -d /opt/omipay omipay
 [root@centos7 ]# passwd omipay
 
-# Gán user vào group
+Gán user vào group:
 [root@centos7 ]# usermod -a -G sftpusers omipay
 ```
 
@@ -34,14 +34,14 @@ Subsystem sftp internal-sftp
 
 4. Cập nhật cuối dòng của `/etc/ssh/sshd_config` hoặc tạo 1 file mới `/etc/ssh/sshd_config.d/omipay.conf`
 ```bash
-Match Group sftpusers
-# Match User omipay
-ForceCommand internal-sftp
-PasswordAuthentication yes
-PermitTunnel no
-AllowAgentForwarding no
-AllowTcpForwarding no
-X11Forwarding no
+    Match Group sftpusers
+    # Match User omipay
+    ForceCommand internal-sftp
+    PasswordAuthentication yes
+    PermitTunnel no
+    AllowAgentForwarding no
+    AllowTcpForwarding no
+    X11Forwarding no
 ```
 Lưu ý: Có thể dùng `Match User omipay` để cụ thể cho phép từng users trong sftpusers
 
