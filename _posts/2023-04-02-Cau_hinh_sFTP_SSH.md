@@ -46,18 +46,18 @@ twitter_text: 'How to configure sftp users in centos7'
 Lưu ý: Có thể dùng `Match User omipay` để cụ thể cho phép từng users trong sftpusers
 
 5. Test kết nối `ssh` và `sftp`
-5.1 Kết nối ssh bị từ chối
 ```bash  
     [root@centos7]# ssh omipay@<remote_ip>
     omipay@<remote_ip>'s password:
     This service allows sftp connections only.
     Connection to 192.168.0.8 closed.
-```
-
-5.2 Cho phép kết nối duy nhất thông qua sftp
-```bash
+    
+    &
+    
     [root@centos7]# sftp omipay@<remote_ip>
     omipay@<remote_ip>'s password:
     Connected to <remote_ip>.
     sftp> 
 ```
+
+Thank you for your reading. Done!
