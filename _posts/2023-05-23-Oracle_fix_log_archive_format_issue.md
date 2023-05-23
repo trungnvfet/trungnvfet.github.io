@@ -31,23 +31,22 @@ SQL> alter system set log_archive_format='arch_%t_%s.arc' scope=spfile;
 
 SOLUTION:
 ---------
-1. Truy cập Oracle và copy bản `init.ora`
+1. Truy cập Oracle và copy bản `init.ora` file
 ```bash
 [root@oracledb19 ~]# su - oracle
-
 [oracle@oracledb19]$ export $ORACLE_HOME=/data/app/oracle
 [oracle@oracledb19]$ cd $ORACLE_HOME/admin/orcl19c/pfile/
 [oracle@oracledb19]$ cp init.ora init.ora_bak
 ```
 
-2. Start Oracle và `nomount` pfile trong `$ORACLE_HOME/admin/orcl19c/pfile/`
+2. Start Oracle và `nomount` pfile trong `$ORACLE_HOME/admin/orcl19c/pfile/` folder
 ```bash
 [oracle@oracledb19 pfile]$ sqlplus / as sysdba
 SQL> shutdown immediate
 SQL> startup nomount pfile='init.ora'
 ```
 
-3. Tạo spfile từ pfile trong `$ORACLE_HOME/admin/orcl19c/pfile/`
+3. Tạo spfile từ pfile trong `$ORACLE_HOME/admin/orcl19c/pfile/` folder
 ```bash
 SQL> create spfile='spfile.ora' from pfile='init.ora'
 ```
@@ -58,14 +57,14 @@ SQL> shutdown immediate
 SQL> startup mount
 ```
 
-5. Thực hiện Alter `Archive log`
+5. Thực hiện Alter `Archive log` mode
 ```bash
 SQL> alter system set log_archive_start=TRUE scope=spfile;
 SQL> alter system set log_archive_format="%s_%t_%r.ARC" scope=spfile;
 SQL> alter system set log_archive_dest_1='location=/data/app/oracle/product/19.0.0/archivelog/oracle19c/' scope=spfile;
 ```
 
-6. Kiểm tra `Archive log`
+6. Kiểm tra `Archive log` mode
 ```bash
 SQL> archive log list
     Database log mode              Archive Mode
@@ -74,6 +73,6 @@ SQL> archive log list
     Oldest online log sequence     269
     Next log sequence to archive   271
     Current log sequence           271
-````
+```
 
 Thank you for your reading. Done!
