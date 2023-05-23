@@ -73,6 +73,11 @@ SQL> archive log list
     Oldest online log sequence     269
     Next log sequence to archive   271
     Current log sequence           271
+
+SQL>  show parameter log_archive_format
+    NAME                                 TYPE        VALUE
+    ------------------------------------ ----------- ------------------------------
+    log_archive_format                   string      %s_%t_%r.ARC
 ```
 
 Thank you for your reading. Done!
