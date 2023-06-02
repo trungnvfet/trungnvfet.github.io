@@ -132,19 +132,19 @@ SQL> select to_char(sysdate, 'dd-MON-YYYY hh24.MI.SS') from dual;
 
 #### 4.2 Kích hoạt `row movement`
 ```bash
-SQL> alter table duydx.products enable row movement;
+SQL> alter table test.products enable row movement;
 ```
 
 #### 4.3 Flashback to scn || timestamp
 ```bash
-SQL> flashback table duydx.products to scn 748335117;
+SQL> flashback table test.products to scn 748335117;
 
-SQL> flashback table duydx.products to timestamp to_timestamp('26-MAY-2023 08.50.00','dd-MON-YY hh24.MI.SS');
+SQL> flashback table test.products to timestamp to_timestamp('26-MAY-2023 08.50.00','dd-MON-YY hh24.MI.SS');
 ```
 
 #### 4.4 Bỏ kích hoạt `row movement`
 ```bash
-SQL> alter table duydx.products disable row movement;
+SQL> alter table test.products disable row movement;
 ```
 
 Thank you for your reading. Done!
