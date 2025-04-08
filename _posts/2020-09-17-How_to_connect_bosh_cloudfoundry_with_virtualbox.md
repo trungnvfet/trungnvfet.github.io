@@ -12,11 +12,9 @@ categories:
 twitter_text: 'How to connect BOSH CloudFoundry with VirtualBox'
 ---
 
-Connect BOSH director with VirtualBox in Mint20
-===============================================
+# Connect BOSH director with VirtualBox in Mint20
 
-1. Install VirtualBox
----------------------
+## 1. Install VirtualBox
 
 ```bash
 $ wget -q https://www.virtualbox.org/download/oracle_vbox_2016.asc -O- | sudo apt-key add -
@@ -35,18 +33,16 @@ $ sudo dpkg -i libvpx5_1.7.0-3_amd64.deb
 - Bosh isn't support VirtualBox >=6.0
 ```
 
-2. Install Ruby client
-----------------------
+## 2. Install Ruby client
 
 ```bash
 $ sudo apt-get install ruby-full build-essential
 $ ruby --version
 ```
 
-3. Install BOSH of VirtualBox
------------------------------
-3.1 Install
------------
+## 3. Install BOSH of VirtualBox
+
+###  3.1 Install
 
 ```bash
 $ mkdir -p  ~/Development/bosh-virtualbox
@@ -59,8 +55,7 @@ $ mv bosh /bin/
 $ bosh --version
 ```
 
-3.2 Create BOSH Director
-------------------------
+### 3.2 Create BOSH Director
 
 ```bash
 $ bosh delete-env bosh-deployment/bosh.yml \
@@ -78,11 +73,9 @@ $ bosh delete-env bosh-deployment/bosh.yml \
   -v internal_gw=192.168.50.1 \
   -v internal_cidr=192.168.50.0/24 \
   -v outbound_network_name=NatNetwork
-```
 
 output:
 
-```bash
 - ifconfig
 vboxnet2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 192.168.50.1  netmask 255.255.255.0  broadcast 192.168.50.255
@@ -103,8 +96,7 @@ URL           Alias
 Succeeded
 ```
 
-3.3 Generate admin password from creds.yml file
------------------------------------------------
+### 3.3 Generate admin password from creds.yml file
 
 ```bash
 bosh int ./creds.yml --path /admin_password
@@ -115,14 +107,14 @@ root@trungnvfet:~/Development/bosh-virtualbox# bosh int ./creds.yml --path /admi
 3cp4c0c7a25k2qxtnf80
 ```
 
-3.4 Create bosh environment alias
----------------------------------
+### 3.4 Create bosh environment alias
 
 ```bash
 $ bosh -e 192.168.50.6 alias-env virtualbox --ca-cert <(bosh int ./creds.yml --path /director_ssl/ca)
 ```
 
-3.5 Login to bosh environment
+### 3.5 Login to bosh environment
+
 ```bash
 $ bosh -e virtualbox login
 
@@ -139,8 +131,7 @@ Successfully authenticated with UAA
 <admin/3cp4c0c7a25k2qxtnf80>
 ```
 
-3.6 Upload cloud-config
------------------------
+### 3.6 Upload cloud-config
 
 ```yml
 - cloud-config.yml
@@ -191,14 +182,14 @@ $ export BOSH_ENVIRONMENT=virtualbox
 $ bosh update-cloud-config bosh-deployment/warden/cloud-config.yml
 ```
 
-3.7 Upload stemcell to director
--------------------------------
+### 3.7 Upload stemcell to director
+
 ```bash
 $ wget https://bosh.io/d/stemcells/bosh-warden-boshlite-ubuntu-trusty-go_agent
 $ bosh upload-stemcell bosh-warden-boshlite-ubuntu-trusty-go_agent
 ```
 
-3.8 Deploy nginx application on the stemcell
+### 3.8 Deploy nginx application on the stemcell
 
 ```bash
 - Upload release for Nginx
@@ -365,6 +356,5 @@ Disk CID  Size  Deployment  Instance  AZ  Orphaned At
 
 Succeeded
 ```
-
 
 Done!!!
