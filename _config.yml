@@ -19,7 +19,7 @@ navbar-links:
     - Openstack: "https://www.openstack.org/"
     - CF: "https://www.cloudfoundry.org/"
     - Kubernetes: "https://kubernetes.io/"
-  Author's home: "https://bi1ty.github.io"
+  Author's home: "https://trungnvfet.github.io"
 
 # --- Logo --- #
 
@@ -42,15 +42,15 @@ round-avatar: true
 social-network-links:
   email: "trungnv.hut@gmail.com"
   facebook: hangxom_113@yahoo.com
-  github: bi1ty
+  github: trungnvfet
   twitter: trungnvfet
 #  patreon: 
   youtube: channel/UCvvlFcDuE94SnNc8VrR8y0g
-#  medium: @trungnv.hut
+  medium: @trungnv.hut
 #  reddit: yourname
-#  linkedin: daattali
+  linkedin: trungnvfet
 #  xing: yourname
-#  stackoverflow: "3943160/daattali"
+  stackoverflow: "10833441/trungnv"
 #  snapchat: deanat78
 #  instagram: deanat78
 #  spotify: yourname
@@ -76,10 +76,11 @@ share-links-active:
   facebook: true
   linkedin: true
   vk: false
+  stackoverflow: true
 
 # How to display the link to your website in the footer
 # Remove this if you don't want a link in the footer
-url-pretty: "bi1ty.trungnvfet.4future"
+url-pretty: "TrungNV's Blog"
 
 # Excerpt word length - Truncate the excerpt of each post on the feed page to the specified number of words
 excerpt_length: 50
@@ -191,7 +192,7 @@ date_format: "%B %-d, %Y"
 # --- You don't need to touch anything below here (but you can if you want) --- #
 
 # Output options (more information on Jekyll's site)
-timezone: "America/Toronto"
+timezone: "Asia/Ho_Chi_Minh"
 markdown: kramdown
 highlighter: rouge
 permalink: /:year-:month-:day-:title/
