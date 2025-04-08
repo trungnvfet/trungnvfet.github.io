@@ -23,19 +23,20 @@ $ echo "deb [arch=amd64] http://download.virtualbox.org/virtualbox/debian bionic
 $ sudo apt-get update -y
 $ sudo apt-get install virtualbox-5.2 -y
 $ VBoxManage --version
-```
 
-NOTE:
+**NOTE:
 - Fix `libvpx5 version` error
-```bash
 <https://github.com/cloudfoundry/bosh-deployment/issues/378>
+
 $ wget http://archive.ubuntu.com/ubuntu/pool/main/libv/libvpx/libvpx5_1.7.0-3_amd64.deb
 $ sudo dpkg -i libvpx5_1.7.0-3_amd64.deb
-```
+
 - Bosh isn't support VirtualBox >=6.0
+```
 
 2. Install Ruby client
 ----------------------
+
 ```bash
 $ sudo apt-get install ruby-full build-essential
 $ ruby --version
@@ -45,6 +46,7 @@ $ ruby --version
 -----------------------------
 3.1 Install
 -----------
+
 ```bash
 $ mkdir -p  ~/Development/bosh-virtualbox
 $ cd  ~/Development/bosh-virtualbox
@@ -55,8 +57,10 @@ $ chmod  +x bosh
 $ mv bosh /bin/
 $ bosh --version
 ```
+
 3.2 Create BOSH Director
 ------------------------
+
 ```bash
 $ bosh delete-env bosh-deployment/bosh.yml \
   --state ./state.json \
@@ -76,8 +80,9 @@ $ bosh delete-env bosh-deployment/bosh.yml \
 ```
 
 output:
-- ifconfig
+
 ```bash
+- ifconfig
 vboxnet2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         inet 192.168.50.1  netmask 255.255.255.0  broadcast 192.168.50.255
         inet6 fe80::800:27ff:fe00:2  prefixlen 64  scopeid 0x20<link>
@@ -86,9 +91,8 @@ vboxnet2: flags=4163<UP,BROADCAST,RUNNING,MULTICAST>  mtu 1500
         RX errors 0  dropped 0  overruns 0  frame 0
         TX packets 177  bytes 26603 (26.6 KB)
         TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
-```
+
 - bosh director
-```bash
 root@trungnvfet:~/Development/bosh-virtualbox# bosh envs
 URL           Alias  
 192.168.50.6  virtualbox  
@@ -100,26 +104,29 @@ Succeeded
 
 3.3 Generate admin password from creds.yml file
 -----------------------------------------------
+
 ```bash
 bosh int ./creds.yml --path /admin_password
-```
+
 output:
-```bash
+
 root@trungnvfet:~/Development/bosh-virtualbox# bosh int ./creds.yml --path /admin_password
 3cp4c0c7a25k2qxtnf80
 ```
 
 3.4 Create bosh environment alias
 ---------------------------------
+
 ```bash
 $ bosh -e 192.168.50.6 alias-env virtualbox --ca-cert <(bosh int ./creds.yml --path /director_ssl/ca)
 ```
+
 3.5 Login to bosh environment
 ```bash
 $ bosh -e virtualbox login
-```
+
 output:
-```bash
+
 root@trungnvfet:~/Development/bosh-virtualbox# bosh -e virtualbox login
 Using environment '192.168.50.6'
 
@@ -133,8 +140,10 @@ Successfully authenticated with UAA
 
 3.6 Upload cloud-config
 -----------------------
-- cloud-config.yml
+
 ```yml
+- cloud-config.yml
+
 azs:
 - name: z1
 - name: z2
@@ -176,9 +185,7 @@ compilation:
   az: z1
   vm_type: default
   network: default
-```
 
-```bash
 $ export BOSH_ENVIRONMENT=virtualbox
 $ bosh update-cloud-config bosh-deployment/warden/cloud-config.yml
 ```
@@ -191,13 +198,17 @@ $ bosh upload-stemcell bosh-warden-boshlite-ubuntu-trusty-go_agent
 ```
 
 3.8 Deploy nginx application on the stemcell
-- Upload release for Nginx
+
 ```bash
+- Upload release for Nginx
+
 bosh upload-release --sha1 1731de7995b785f314e87f54f2e29d3668f0b27f \
 >   https://bosh.io/d/github.com/cloudfoundry-community/nginx-release?v=1.19.1
 ```
-- Create nginx.yml
+
 ```yml
+- Create nginx.yml
+
 ---
 name: nginx
 
@@ -250,23 +261,21 @@ update:
   update_watch_time: 1000-60000
 ```
 
-- Deploy nginx
 ```bash
+- Deploy nginx
+
 $ bosh -d nginx deploy nginx.yml
-```
 
 - Add route for Nginx application and access via web
-```bash
+
 $ ip route add 10.244.0.0/24 via 192.168.50.6 dev vboxnet2
-```
 
 - Delete Nginx deployment
-```bash
+
 $ bosh -d nginx delete-deployment
-```
 
 - Delete BOSH director connected the VirtualBox
-```bash
+
 bosh delete-env bosh-deployment/bosh.yml \
   --state ./state.json \
   -o bosh-deployment/virtualbox/cpi.yml \
@@ -282,10 +291,9 @@ bosh delete-env bosh-deployment/bosh.yml \
   -v internal_gw=192.168.50.1 \
   -v internal_cidr=192.168.50.0/24 \
   -v outbound_network_name=NatNetwork
-```
 
 - Check stemcells
-```bash
+
 root@trungnvfet:~/Development/bosh-virtualbox# bosh stemcells
 Using environment '192.168.50.6' as user 'admin'
 
@@ -297,10 +305,9 @@ bosh-warden-boshlite-ubuntu-trusty-go_agent  3586.100*  ubuntu-trusty  -    e294
 1 stemcells
 
 Succeeded
-```
 
 - Check deployments
-```bash
+
 root@trungnvfet:~/Development/bosh-virtualbox# bosh deployments
 Using environment '192.168.50.6' as user 'admin'
 
@@ -310,10 +317,9 @@ nginx  nginx/1.19.1  bosh-warden-boshlite-ubuntu-trusty-go_agent/3586.100  -
 1 deployments
 
 Succeeded
-```
 
 - Check nginx app
-```bash
+ 
 root@trungnvfet:~/Development/bosh-virtualbox# bosh vms
 Using environment '192.168.50.6' as user 'admin'
 
@@ -327,11 +333,10 @@ nginx/5253875e-1116-4262-bc5b-241b491cbd79  running        z1  10.244.0.2  a72db
 1 vms
 
 Succeeded
-```
 
 - Deploy 2 nginx application
 Output:
-```bash
+
 root@trungnvfet:~/Development/bosh-virtualbox# bosh vms
 Using environment '192.168.50.6' as user 'admin'
 
@@ -347,10 +352,9 @@ nginx/5253875e-1116-4262-bc5b-241b491cbd79  running        z1  10.244.0.2  a72db
 2 vms
 
 Succeeded
-```
 
 - Check disks
-```bash
+
 root@trungnvfet:~/Development/bosh-virtualbox# bosh disks --orphaned
 Using environment '192.168.50.6' as user 'admin'
 

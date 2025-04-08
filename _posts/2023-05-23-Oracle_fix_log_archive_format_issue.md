@@ -65,7 +65,8 @@ SQL> alter system set log_archive_dest_1='location=/data/app/oracle/product/19.0
 ```
 
 6. Kiểm tra `Archive log` mode
-```bash
+
+```sql
 SQL> archive log list
     Database log mode              Archive Mode
     Automatic archival             Enabled
