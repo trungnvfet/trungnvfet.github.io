@@ -18,8 +18,7 @@ subtitle: More detail information about my CV
 - 📫 How to reach me:
 	- `Website` (https://trungnvfet.github.io)
  	- `Medium` (https://medium.com/@trungnv.hut)
-  	- `Substack` (https://substack.com/@trungnv)
-
+ 	- `Substack` (https://substack.com/@trungnv)
 
 ### Technologies & Tools
 ![](https://img.shields.io/badge/OS-Linux-informational?style=flat&logo=linux&logoColor=white)
