@@ -14,7 +14,6 @@ subtitle: More detail information about my CV
 	- `Automation` (n8n, Python)
     - `Monitoring` (ELK, Telegraf, Prometheus, Grafana) 
 	- `Database` (AWR, ADDM, ASH report)
- 	- `Monitoring` (ELK, Telegraf, Prometheus, Grafana) 
 
 - 📫 How to reach me:
     - `Website` https://trungnvfet.github.io
